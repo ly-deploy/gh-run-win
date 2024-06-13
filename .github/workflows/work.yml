@@ -5,9 +5,9 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-        ZIP_PASS: ${{ secrets.ZIP_PASS }}
-        TS_AUTH_KEY: ${{ secrets.TS_AUTH_KEY }}
-        TS_HOSTNAME: ${{ secrets.TS_HOSTNAME }}
+        ZIP_PASS: ${{ secrets.sec.ZIP_PASS }}
+        TS_AUTH_KEY: ${{ secrets.sec.TS_AUTH_KEY }}
+        TS_HOSTNAME: ${{ secrets.sec.TS_HOSTNAME }}
     steps:
       - uses: actions/checkout@v2
       - run: Write-Host "Host is $Env:TS_HOSTNAME"
