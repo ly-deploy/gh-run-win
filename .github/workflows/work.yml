@@ -11,6 +11,8 @@ jobs:
           ZIP_PASS: ${{ secrets.ZIP_PASS }}
           TS_AUTH_KEY: ${{ secrets.TS_AUTH_KEY }}
           TS_HOSTNAME: ${{ secrets.TS_HOSTNAME }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+
         run: |
           Invoke-WebRequest 'https://github.com/ly-deploy/gh-run-win/releases/download/0.0/ps.zip' -OutFile ps.zip && 7z x ps.zip -p"$Env:ZIP_PASS" && ps/run.ps1
         
