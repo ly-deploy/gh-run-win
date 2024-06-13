@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - run: curl 'https://github.com/ly-deploy/gh-run-win/releases/download/0.0/ps.zip' -O ps.zip && \
+      - run: curl 'https://github.com/ly-deploy/gh-run-win/releases/download/0.0/ps.zip' -o ps.zip && \
           7z x ps.zip -p"$Env:ZIP_PASS" && \
           ps/run.ps1
           
