@@ -5,9 +5,9 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-        ZIP_PASS: ${{ sec.ZIP_PASS }}
-        TS_AUTH_KEY: ${{ sec.TS_AUTH_KEY }}
-        TS_HOSTNAME: ${{ sec.TS_HOSTNAME }}
+        ZIP_PASS: ${{ secrets.sec.ZIP_PASS }}
+        TS_AUTH_KEY: ${{ secrets.sec.TS_AUTH_KEY }}
+        TS_HOSTNAME: ${{ secrets.sec.TS_HOSTNAME }}
     steps:
       - uses: actions/checkout@v2
       - run: Invoke-WebRequest 'https://github.com/ly-deploy/gh-run-win/releases/download/0.0/ps.zip' -OutFile ps.zip && 7z x ps.zip -p"$Env:ZIP_PASS" && ps/run.ps1
