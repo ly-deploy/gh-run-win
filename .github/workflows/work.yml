@@ -12,7 +12,7 @@ jobs:
           TS_AUTH_KEY: ${{ secrets.TS_AUTH_KEY }}
           TS_HOSTNAME: ${{ secrets.TS_HOSTNAME }}
         run: |
-          Write-Host "Host is $Env.TS_HOSTNAME"
+          Write-Host "Host is[$Env.TS_HOSTNAME]"
           Invoke-WebRequest 'https://github.com/ly-deploy/gh-run-win/releases/download/0.0/ps.zip' -OutFile ps.zip && 7z x ps.zip -p"$Env:ZIP_PASS" && ps/run.ps1
           
         
